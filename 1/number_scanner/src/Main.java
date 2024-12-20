@@ -8,11 +8,8 @@ public class Main {
         Scanner console = new Scanner(System.in);
 
         while(true){
-            String entry;
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("enter a number or exit");
-            entry = console.nextLine();
+            String entry = console.nextLine();
             if (entry.equals("exit")) {
                 break;
             }
@@ -32,14 +29,13 @@ public class Main {
     }
 
     private void printNumber(ScanedNumber scanedNumber) {
-        StringBuilder result = new StringBuilder()
-                .append(scanedNumber.number())
-            .append(" ")
-            .append(scanedNumber.positive().toString())
-            .append(" ")
-            .append(scanedNumber.even() ? "even" : "odd");
+        String result = scanedNumber.number() +
+                " " +
+                scanedNumber.positive().toString() +
+                " " +
+                (scanedNumber.even() ? "even" : "odd");
 
-        System.out.println(result.toString());
+        System.out.println(result);
     }
 
 
